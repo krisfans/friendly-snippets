@@ -1,4 +1,24 @@
 {
+	"begin": {
+		"prefix": "beg",
+		"body": "\\begin{$1}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{$1}",
+		"description": "begin environment"
+	},
+	"description": {
+		"prefix": "des",
+		"body": "\\begin{description}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{description}",
+		"description": "description environment"
+	},
+	"matrix": {
+		"prefix": "mat",
+		"body": "\\begin{$1matrix}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{$1matrix}",
+		"description": "matrix environment"
+	},
+	"fraction": {
+		"prefix": "frac",
+		"body": "\\frac{$1}{$2}$0",
+		"description": "fraction"
+	},
 	"item": {
 		"prefix": "item",
 		"body": "\n\\item ",
@@ -19,26 +39,8 @@
 		"body": "\\dots",
 		"description": "\\dots"
 	},
-	"cdot": {
-		"prefix": "@.",
-		"body": "\\cdot",
-		"description": "\\cdot"
-	},
-	"infinity": {
-		"prefix": "@8",
-		"body": "\\infty",
-		"description": "infinity symbol"
-	},
-	"partial": {
-		"prefix": "@6",
-		"body": "\\partial",
-		"description": "partial derivative symbol"
-	},
-	"fraction": {
-		"prefix": "@/",
-		"body": "\\frac{$1}{$2}$0",
-		"description": "fraction"
-	},
+
+
 	"fraction2": {
 		"prefix": "@%",
 		"body": "\\frac{$1}{$2}$0",
@@ -126,82 +128,82 @@
 		"description": "nonumber"
 	},
 	"equation": {
-		"prefix": "BEQ",
+		"prefix": "equ",
 		"body": "\\begin{equation}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{equation}",
 		"description": "equation environment"
 	},
 	"equation*": {
-		"prefix": "BSEQ",
+		"prefix": "equ*",
 		"body": "\\begin{equation*}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{equation*}",
 		"description": "equation* environment"
 	},
 	"align": {
-		"prefix": "BAL",
+		"prefix": "ali",
 		"body": "\\begin{align}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{align}",
 		"description": "align environment"
 	},
 	"align*": {
-		"prefix": "BSAL",
+		"prefix": "ali",
 		"body": "\\begin{align*}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{align*}",
 		"description": "align* environment"
 	},
 	"gather": {
-		"prefix": "BGA",
+		"prefix": "gat",
 		"body": "\\begin{gather}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{gather}",
 		"description": "gather environment"
 	},
 	"gather*": {
-		"prefix": "BSGA",
+		"prefix": "gat*",
 		"body": "\\begin{gather*}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{gather*}",
 		"description": "gather* environment"
 	},
 	"multline": {
-		"prefix": "BMU",
+		"prefix": "mult",
 		"body": "\\begin{multline}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{multline}",
 		"description": "multline environment"
 	},
 	"multline*": {
-		"prefix": "BSMU",
+		"prefix": "mult*",
 		"body": "\\begin{multline*}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{multline*}",
 		"description": "multline* environment"
 	},
 	"itemize": {
-		"prefix": "BIT",
+		"prefix": "ite",
 		"body": "\\begin{itemize}\n\t\\item ${0:${TM_SELECTED_TEXT}}\n\\end{itemize}",
 		"description": "itemize environment"
 	},
 	"enumerate": {
-		"prefix": "BEN",
+		"prefix": "enu",
 		"body": "\\begin{enumerate}\n\t\\item ${0:${TM_SELECTED_TEXT}}\n\\end{enumerate}",
 		"description": "enumerate environment"
 	},
 	"split": {
-		"prefix": "BSPL",
+		"prefix": "spl",
 		"body": "\\begin{split}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{split}",
 		"description": "split environment"
 	},
 	"cases": {
-		"prefix": "BCAS",
+		"prefix": "cas",
 		"body": "\\begin{cases}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{cases}",
 		"description": "cases environment"
 	},
 	"frame": {
-		"prefix": "BFR",
+		"prefix": "fra",
 		"body": "\\begin{frame}\n\t\\frametitle{${1:<title>}}\n\n\t${0:${TM_SELECTED_TEXT}}\n\n\\end{frame}",
 		"description": "frame"
 	},
 	"figure": {
-		"prefix": "BFI",
-		"body": "\\begin{figure}[${1:htbp}]\n\t\\centering\n\t${0:${TM_SELECTED_TEXT}}\n\t\\caption{${2:<caption>}}\n\t\\label{${3:<label>}}\n\\end{figure}",
+		"prefix": ["fig","bfig"],
+		"body": "\\begin{figure}[${1:htbp}]\n\t\\centering\n\t\\includegraphics[width=$4]{$5}\n\t\\caption{${2:<caption>}}\n\t\\label{${3:<label>}}\n\\end{figure}\n\t$0",
 		"description": "figure"
 	},
 	"table": {
-		"prefix": "BTA",
+		"prefix": "tab",
 		"body": "\\begin{table}[${1:htbp}]\n\t\\centering\\begin{tabular}{${4:<columns>}}\n\t\t${0:${TM_SELECTED_TEXT}}\n\t\\end{tabular}\n\t\\caption{${2:<caption>}}\n\t\\label{${3:<label>}}\n\\end{table}",
 		"description": "table"
 	},
 	"tikzpicture": {
-		"prefix": "BTP",
+		"prefix": "tikz",
 		"body": "\\begin{tikzpicture}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{tikzpicture}",
 		"description": "tikzpicture"
 	},
@@ -211,307 +213,122 @@
 		"description": "Select a font size"
 	},
 	"textnormal": {
-		"prefix": "FNO",
+		"prefix": "tno",
 		"body": "\\textnormal{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "normal font"
 	},
 	"textrm": {
-		"prefix": "FRM",
+		"prefix": "trm",
 		"body": "\\textrm{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "roman font"
 	},
 	"emph": {
-		"prefix": "FEM",
+		"prefix": "emp",
 		"body": "\\emph{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "emphasis font"
 	},
 	"textsf": {
-		"prefix": "FSF",
+		"prefix": "tsf",
 		"body": "\\textsf{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "sans serif font"
 	},
 	"texttt": {
-		"prefix": "FTT",
+		"prefix": "ttt",
 		"body": "\\texttt{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "typewriter font"
 	},
 	"textit": {
-		"prefix": "FIT",
+		"prefix": "tit",
 		"body": "\\textit{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "italic font"
 	},
 	"textsl": {
-		"prefix": "FSL",
+		"prefix": "tsl",
 		"body": "\\textsl{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "slanted font"
 	},
 	"textsc": {
-		"prefix": "FSC",
+		"prefix": "tsc",
 		"body": "\\textsc{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "smallcaps font"
 	},
 	"underline": {
-		"prefix": "FUL",
+		"prefix": "und",
 		"body": "\\underline{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "Underline text"
 	},
 	"uppercase": {
-		"prefix": "FUC",
+		"prefix": "upc",
 		"body": "\\uppercase{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "Make text uppercase (all caps)"
 	},
 	"lowercase": {
-		"prefix": "FLC",
+		"prefix": "lowc",
 		"body": "\\lowercase{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "Make text lowercase (no caps)"
 	},
 	"textbf": {
-		"prefix": "FBF",
+		"prefix": "tbf",
 		"body": "\\textbf{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "bold font"
 	},
 	"textsuperscript": {
-		"prefix": "FSS",
+		"prefix": "tss",
 		"body": "\\textsuperscript{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "Make text a superscript"
 	},
 	"textsubscript": {
-		"prefix": "FBS",
+		"prefix": "tbs",
 		"body": "\\textsubscript{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "Make text a superscript"
 	},
 	"mathrm": {
-		"prefix": "MRM",
+		"prefix": "mrm",
 		"body": "\\mathrm{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "math roman font"
 	},
 	"mathbf": {
-		"prefix": "MBF",
+		"prefix": "mbf",
 		"body": "\\mathbf{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "math bold font"
 	},
 	"mathbb": {
-		"prefix": "MBB",
+		"prefix": "mbb",
 		"body": "\\mathbb{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "math blackboard bold font"
 	},
 	"mathcal": {
-		"prefix": "MCA",
+		"prefix": "mca",
 		"body": "\\mathcal{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "math caligraphic font"
 	},
 	"mathit": {
-		"prefix": "MIT",
+		"prefix": "mit",
 		"body": "\\mathit{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "math italic font"
 	},
 	"mathtt": {
-		"prefix": "MTT",
+		"prefix": "mtt",
 		"body": "\\mathtt{${1:${TM_SELECTED_TEXT:text}}}",
 		"description": "math typewriter font"
 	},
-	"alpha": {
-		"prefix": "@a",
-		"body": "\\alpha",
-		"description": "alpha"
-	},
-	"beta": {
-		"prefix": "@b",
-		"body": "\\beta",
-		"description": "beta"
-	},
-	"chi": {
-		"prefix": "@c",
-		"body": "\\chi",
-		"description": "chi"
-	},
-	"delta": {
-		"prefix": "@d",
-		"body": "\\delta",
-		"description": "delta"
-	},
-	"epsilon": {
-		"prefix": "@e",
-		"body": "\\epsilon",
-		"description": "epsilon"
-	},
-	"varepsilon": {
-		"prefix": "@ve",
-		"body": "\\varepsilon",
-		"description": "varepsilon"
-	},
-	"phi": {
-		"prefix": "@f",
-		"body": "\\phi",
-		"description": "phi"
-	},
-	"varphi": {
-		"prefix": "@vf",
-		"body": "\\varphi",
-		"description": "varphi"
-	},
-	"gamma": {
-		"prefix": "@g",
-		"body": "\\gamma",
-		"description": "gamma"
-	},
-	"eta": {
-		"prefix": "@h",
-		"body": "\\eta",
-		"description": "eta"
-	},
-	"iota": {
-		"prefix": "@i",
-		"body": "\\iota",
-		"description": "iota"
-	},
-	"kappa": {
-		"prefix": "@k",
-		"body": "\\kappa",
-		"description": "kappa"
-	},
-	"lambda": {
-		"prefix": "@l",
-		"body": "\\lambda",
-		"description": "lambda"
-	},
-	"mu": {
-		"prefix": "@m",
-		"body": "\\mu",
-		"description": "mu"
-	},
-	"nu": {
-		"prefix": "@n",
-		"body": "\\nu",
-		"description": "nu"
-	},
-	"pi": {
-		"prefix": "@p",
-		"body": "\\pi",
-		"description": "pi"
-	},
-	"theta": {
-		"prefix": "@q",
-		"body": "\\theta",
-		"description": "theta"
-	},
-	"vartheta": {
-		"prefix": "@vq",
-		"body": "\\vartheta",
-		"description": "vartheta"
-	},
-	"rho": {
-		"prefix": "@r",
-		"body": "\\rho",
-		"description": "rho"
-	},
-	"sigma": {
-		"prefix": "@s",
-		"body": "\\sigma",
-		"description": "sigma"
-	},
-	"varsigma": {
-		"prefix": "@vs",
-		"body": "\\varsigma",
-		"description": "varsigma"
-	},
-	"tau": {
-		"prefix": "@t",
-		"body": "\\tau",
-		"description": "tau"
-	},
-	"upsilon": {
-		"prefix": "@u",
-		"body": "\\upsilon",
-		"description": "upsilon"
-	},
-	"omega": {
-		"prefix": "@o",
-		"body": "\\omega",
-		"description": "omega"
-	},
-	"wedge": {
-		"prefix": "@&",
-		"body": "\\wedge",
-		"description": "wedge"
-	},
-	"xi": {
-		"prefix": "@x",
-		"body": "\\xi",
-		"description": "xi"
-	},
-	"psi": {
-		"prefix": "@y",
-		"body": "\\psi",
-		"description": "psi"
-	},
-	"zeta": {
-		"prefix": "@z",
-		"body": "\\zeta",
-		"description": "zeta"
-	},
-	"Delta": {
-		"prefix": "@D",
-		"body": "\\Delta",
-		"description": "Delta"
-	},
-	"Phi": {
-		"prefix": "@F",
-		"body": "\\Phi",
-		"description": "Phi"
-	},
-	"Gamma": {
-		"prefix": "@G",
-		"body": "\\Gamma",
-		"description": "Gamma"
-	},
-	"Theta": {
-		"prefix": "@Q",
-		"body": "\\Theta",
-		"description": "Theta"
-	},
-	"Lambda": {
-		"prefix": "@L",
-		"body": "\\Lambda",
-		"description": "Lambda"
-	},
-	"Xi": {
-		"prefix": "@X",
-		"body": "\\Xi",
-		"description": "Xi"
-	},
-	"Psi": {
-		"prefix": "@Y",
-		"body": "\\Psi",
-		"description": "Psi"
-	},
-	"Sigma": {
-		"prefix": "@S",
-		"body": "\\Sigma",
-		"description": "Sigma"
-	},
-	"Upsilon": {
-		"prefix": "@U",
-		"body": "\\Upsilon",
-		"description": "Upsilon"
-	},
-	"Omega": {
-		"prefix": "@W",
-		"body": "\\Omega",
-		"description": "Omega"
+	"lr": {
+		"prefix": "lr",
+		"body": "\\left${1} ${0:${TM_SELECTED_TEXT}} \\right${2}",
+		"description": "left( ... right)"
 	},
 	"(": {
-		"prefix": "@(",
+		"prefix": "\\(",
 		"body": "\\left( ${1:${TM_SELECTED_TEXT}} \\right)",
 		"description": "left( ... right)"
 	},
 	"{": {
-		"prefix": "@{",
+		"prefix": "\\{",
 		"body": "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\}",
 		"description": "left{ ... right}"
 	},
 	"[": {
-		"prefix": "@[",
+		"prefix": "\\[",
 		"body": "\\left[ ${1:${TM_SELECTED_TEXT}} \\right]",
 		"description": "left[ ... right]"
 	},
@@ -520,38 +337,38 @@
 		"description": "Wrap selection into an environment"
 	},
 	"part": {
-		"prefix": "SPA",
+		"prefix": "part",
 		"body": "\\part{${1:${TM_SELECTED_TEXT}}}",
 		"description": "part"
 		},
 	"chapter": {
-		"prefix": "SCH",
+		"prefix": "cha",
 		"body": "\\chapter{${1:${TM_SELECTED_TEXT}}}",
 		"description": "chapter"
 	},
 	"section": {
-		"prefix": "SSE",
+		"prefix": "sec",
 		"body": "\\section{${1:${TM_SELECTED_TEXT}}}",
 		"description": "section"
 
 	},
 	"subsection": {
-		"prefix": "SSS",
+		"prefix": "ssec",
 		"body": "\\subsection{${1:${TM_SELECTED_TEXT}}}",
 		"description": "subsection"
 	},
 	"subsubsection": {
-		"prefix": "SS2",
+		"prefix": "sssec",
 		"body": "\\subsubsection{${1:${TM_SELECTED_TEXT}}}",
 		"description": "subsubsection"
 	},
 	"paragraph": {
-		"prefix": "SPG",
+		"prefix": "par",
 		"body": "\\paragraph{${1:${TM_SELECTED_TEXT}}}",
 		"description": "paragraph"
 	},
 	"subparagraph": {
-		"prefix": "SSP",
+		"prefix": "subp",
 		"body": "\\subparagraph{${1:${TM_SELECTED_TEXT}}}",
 		"description": "subparagraph"
 	}
