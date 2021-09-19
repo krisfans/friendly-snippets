@@ -1,7 +1,23 @@
 {
-  "diso": {
-    "prefix": "diso",
-    "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
-    "description": "ISO date time stamp"
-  }
+    "diso": {
+        "prefix": "diso",
+        "body": [
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
+        ],
+        "description": "ISO date time stamp"
+    },
+    "time": {
+        "prefix": "time",
+        "body": [
+            "${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
+        ],
+        "description": "ISO  time stamp"
+    },
+    "date": {
+        "prefix": "date",
+        "body": [
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}"
+        ],
+        "description": "ISO  date stamp"
+    }
 }
