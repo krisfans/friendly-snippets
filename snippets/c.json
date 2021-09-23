@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "head": {
         "prefix": "head",
@@ -580,4 +579,4 @@
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
   }
 }
->>>>>>> upstream/main
+
