@@ -246,20 +246,6 @@
         "path": "./snippets/fortran/vscode-fortran-support.json"
       },
       {
-        "language": [
-          "plaintex",
-          "tex"
-        ],
-        "path": "./snippets/latex/latex-snippets.json"
-      },
-      {
-        "language": [
-          "plaintex",
-          "tex"
-        ],
-        "path": "./snippets/latex/vscode-latex-snippets.json"
-      },
-      {
         "language": "twig",
         "path": "./snippets/twig.json"
       },
